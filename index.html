@@ -75,10 +75,9 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
+            border-radius: 6px;
             padding: 30px;
             transition: all 0.3s ease;
             position: relative;
@@ -86,28 +85,15 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(100, 181, 246, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #64b5f6, #42a5f5);
-        }
+
+
 
         .project-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #64b5f6, #42a5f5);
-            border-radius: 15px;
+            background: #000000;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,17 +121,17 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(45deg, #1e88e5, #1976d2);
+            background: #2E5BFF;
             color: white;
             text-decoration: none;
             padding: 12px 24px;
-            border-radius: 12px;
+            border-radius: 6px;
             font-weight: 500;
             transition: all 0.3s ease;
         }
 
         .project-link:hover {
-            background: linear-gradient(45deg, #1976d2, #1565c0);
+            background: #1E4AE9;
             transform: translateX(5px);
         }
 
@@ -293,8 +279,8 @@
 
     <div class="container">
         <header class="header">
-            <div class="graebert-logo" style="margin-bottom: 40px;">
-                <svg width="186" height="55" viewBox="0 0 186 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="graebert-logo" style="margin-bottom: 20px;">
+                <svg width="279" height="82.5" viewBox="0 0 186 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.15 9.56H12.59V0H9.94002V9.56H0.390015V12.21H9.94002V21.76H12.59V12.21H22.15V9.56Z" fill="#FFE500"/>
                     <path d="M59.34 35.44C59.11 40.73 60.05 47.75 55.63 51.56C55.2 51.9 54.8 52.13 54.39 52.34C46.72 54.86 38.39 54.54 30.7 52.06C28.71 51.08 27.06 49.36 26.6 47C26.01 43.87 25.89 40.91 25.84 37.8C25.95 34.32 25.72 30.79 26.62 27.38C27.23 25.07 28.38 23.24 30.26 22.05C33.24 20.44 37.04 20.45 40.31 20.33C45.67 20.47 51.85 20.06 56.22 23.49C58.37 25.51 59.06 28.75 58.99 31.73C58.46 31.94 57.85 31.73 57.3 31.8C55.56 31.69 53.7 32 52.13 31.73C52.02 30.74 51.97 29.58 51.44 28.75C50.8 27.79 49.98 27.22 48.92 26.94C43.61 26.07 39.81 26.17 35.1 27.35C33.96 27.88 33.43 29.09 33.15 30.42C32.46 36.16 32.32 45.1 34.82 46.69C36.42 47.84 38.6 47.54 40.48 47.77C44.05 47.65 48.52 48.59 51.15 45.8C52.13 44.29 52.23 42.2 52.02 40.49L40.75 40.51V35.43L59.32 35.36L59.34 35.45V35.44Z" fill="white"/>
                     <path d="M101.55 21.15V44.13L108.47 44.11L108.49 38.54C108.53 37.7 108.49 36.96 108.86 36.14C109.27 35.25 110.07 34.7 111.08 34.44C113.16 34.24 115.8 34.07 117.61 35.45C119.44 37.71 118.62 41.15 118.5 43.97C118.25 45.37 117.47 46.4 116.33 47.01C111.5 48.55 106.3 47.4 101.48 46.19C101.53 46.39 101.55 46.51 101.48 46.79C101.66 48.49 100.82 50.89 102.51 52.17C108.41 54.37 115.24 54.43 121.19 52.33C123.21 51.26 124.49 49.51 125.01 47.13C125.63 44.68 125.76 42.35 125.79 40.03C125.56 36.51 125.63 32.15 122.65 29.68C118.85 27.12 112.71 27.21 108.71 29.48C108.53 29.37 108.64 29.34 108.71 29.21V21.15H101.54H101.55Z" fill="white"/>
@@ -308,43 +294,61 @@
                     <path d="M185.66 28.94L185.7 34.62L180.76 34.66C180.78 39.86 180.23 47.64 181.72 50.37C182.18 51.52 183.5 52.41 184.15 53.55C180.95 53.04 176.23 54.88 174.49 51.28C173.03 49.2 173.85 44.59 173.44 41.41L173.55 21.47L180.65 21.44L180.67 28.97L185.66 28.95V28.94Z" fill="white"/>
                     <path d="M30.25 22.05C28.37 23.24 27.21 25.07 26.61 27.38C25.7 30.79 25.93 34.32 25.83 37.8C25.88 40.91 26.01 43.87 26.59 47C27.05 49.36 28.7 51.08 30.69 52.06C38.38 54.55 46.7 54.87 54.38 52.34C54.79 52.13 55.2 51.9 55.62 51.56C60.04 47.74 59.1 40.73 59.33 35.44L59.31 35.35L40.74 35.42V40.5L52.01 40.48C52.22 42.19 52.12 44.28 51.14 45.79C49.1 47.96 45.93 47.87 42.95 47.78C42.1 47.76 41.26 47.73 40.47 47.76C38.59 47.53 36.4 47.83 34.81 46.68C32.31 45.1 32.45 36.15 33.14 30.41C33.43 29.08 33.96 27.87 35.09 27.34C39.8 26.17 43.6 26.06 48.9 26.93C49.97 27.21 50.78 27.78 51.42 28.74C51.95 29.58 52.01 30.73 52.11 31.72C53.02 31.87 54.03 31.84 55.06 31.8C55.8 31.77 56.55 31.75 57.28 31.8C57.5 31.77 57.73 31.79 57.96 31.8C58.3 31.83 58.65 31.85 58.97 31.72C59.04 28.74 58.35 25.5 56.2 23.48C51.83 20.05 45.65 20.46 40.29 20.32C37.02 20.44 33.22 20.43 30.24 22.04" fill="white"/>
                 </svg>
+                <div style="color: white; font-size: 0.9rem; margin-top: 10px; font-weight: 300;">development projects</div>
             </div>
-            <h1>Graebert Dev Projects</h1>
-            <p>Innovative web applications and tools</p>
-            <div class="status">🟢 All projects online</div>
         </header>
 
         <main class="projects-grid">
             <div class="project-card">
-                <div class="project-icon">🔍</div>
+                <div class="project-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1077 29.8809C14.1077 29.8809 12.5946 26.6486 13.4012 22.0753C14.4551 16.1142 24.5643 11.2364 24.5643 11.2364C10.5751 15.6048 5.03475 21.0974 14.1077 29.8751" fill="#C70A1A"/>
+                        <path d="M14.1018 29.8809C14.1018 29.8809 11.576 24.8743 13.0067 19.4578C14.9909 11.9508 27.4905 6.67479 27.4905 6.67479C9.00307 10.3756 0.866248 19.9614 14.1018 29.8809Z" fill="#9E0F05"/>
+                        <path d="M14.1077 29.8868C13.0892 28.3936 8.96776 23.2113 9.89801 17.2326C11.0932 9.53238 29.8868 2.11321 29.8868 2.11321C6.47725 7.81666 -10.3439 18.152 14.1077 29.8868Z" fill="#ED0000"/>
+                    </svg>
+                </div>
                 <h2 class="project-title">CLI Search</h2>
                 <p class="project-description">
                     Modern file search interface with multi-cloud service support. 
                     Intuitive filtering, result tabs, and advanced file management.
                 </p>
-                <a href="/cli-search/" class="project-link">
-                    Open Project →
-                </a>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <a href="/cli-search/" class="project-link">
+                        Open Project →
+                    </a>
+                    <a href="https://github.com/dubnyakalexey/cli-search" class="project-link" style="background: #000000; color: white;" target="_blank">
+                        GitHub →
+                    </a>
+                </div>
             </div>
 
             <div class="project-card">
-                <div class="project-icon">📄</div>
+                <div class="project-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1077 29.8809C14.1077 29.8809 12.5946 26.6486 13.4012 22.0753C14.4551 16.1142 24.5643 11.2364 24.5643 11.2364C10.5751 15.6048 5.03475 21.0974 14.1077 29.8751" fill="#C70A1A"/>
+                        <path d="M14.1018 29.8809C14.1018 29.8809 11.576 24.8743 13.0067 19.4578C14.9909 11.9508 27.4905 6.67479 27.4905 6.67479C9.00307 10.3756 0.866248 19.9614 14.1018 29.8809Z" fill="#9E0F05"/>
+                        <path d="M14.1077 29.8868C13.0892 28.3936 8.96776 23.2113 9.89801 17.2326C11.0932 9.53238 29.8868 2.11321 29.8868 2.11321C6.47725 7.81666 -10.3439 18.152 14.1077 29.8868Z" fill="#ED0000"/>
+                    </svg>
+                </div>
                 <h2 class="project-title">Print to PDF</h2>
                 <p class="project-description">
                     Powerful tool for converting documents to PDF format. 
                     Advanced print settings, preview, and quality optimization.
                 </p>
-                <a href="/print-to-pdf/" class="project-link">
-                    Open Project →
-                </a>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <a href="/print-to-pdf/" class="project-link">
+                        Open Project →
+                    </a>
+                    <a href="https://github.com/dubnyakalexey/print-to-pdf" class="project-link" style="background: #000000; color: white;" target="_blank">
+                        GitHub →
+                    </a>
+                </div>
             </div>
         </main>
 
         <footer class="footer">
             <p>Built by Graebert team with ❤️</p>
             <div class="footer-links">
-                <a href="https://github.com/alexdubnyak/cli-search" class="footer-link">GitHub: CLI Search</a>
-                <a href="https://github.com/alexdubnyak/print-to-pdf" class="footer-link">GitHub: Print to PDF</a>
                 <a href="https://graebert.com" class="footer-link">Graebert.com</a>
             </div>
         </footer>
