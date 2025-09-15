@@ -9,273 +9,11 @@
     <title>Graebert Dev Projects</title>
     <meta name="description" content="Graebert development projects - CLI Search and Print to PDF tools" />
     <meta name="theme-color" content="#000000" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #000000;
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #64b5f6, #42a5f5, #1e88e5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .status {
-            display: inline-block;
-            background: rgba(76, 175, 80, 0.2);
-            border: 1px solid #4caf50;
-            color: #4caf50;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 6px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease-out;
-        }
-
-
-
-
-
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            background: #000000;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .project-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            opacity: 0.8;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #2E5BFF;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: #1E4AE9;
-            transform: translateX(5px);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .footer p {
-            opacity: 0.6;
-            margin-bottom: 15px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: #64b5f6;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-link:hover {
-            opacity: 1;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .header p {
-                font-size: 1.1rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .project-card {
-                padding: 25px;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
-        /* Floating particles animation */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(100, 181, 246, 0.3);
-            border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 0.5s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 1s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 1.5s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 2s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 2.5s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 3s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 3.5s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 4s; }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) scale(0);
-            }
-            10% {
-                transform: translateY(90vh) scale(1);
-            }
-            90% {
-                transform: translateY(10vh) scale(1);
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+    <div class="dots-background" id="dotsBackground"></div>
 
     <div class="container">
         <header class="header">
@@ -355,9 +93,86 @@
     </div>
 
     <script>
-        // Add some interactive effects
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate project cards on scroll
+            // Создаем интерактивную сетку точек
+            const dotsContainer = document.getElementById('dotsBackground');
+            const dotSpacing = 40; // Расстояние между точками в пикселях
+            const dots = [];
+            let mouseX = 0;
+            let mouseY = 0;
+
+            // Функция для создания сетки точек
+            function createDots() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                
+                dotsContainer.innerHTML = ''; // Очищаем контейнер
+                dots.length = 0; // Очищаем массив
+
+                for (let x = dotSpacing; x < width; x += dotSpacing) {
+                    for (let y = dotSpacing; y < height; y += dotSpacing) {
+                        const dot = document.createElement('div');
+                        dot.className = 'dot';
+                        dot.style.left = x + 'px';
+                        dot.style.top = y + 'px';
+                        
+                        dotsContainer.appendChild(dot);
+                        dots.push({
+                            element: dot,
+                            originalX: x,
+                            originalY: y,
+                            currentX: x,
+                            currentY: y
+                        });
+                    }
+                }
+            }
+
+            // Функция для обновления позиций точек с эффектом примагничивания
+            function updateDots() {
+                dots.forEach(dot => {
+                    const dx = mouseX - dot.originalX;
+                    const dy = mouseY - dot.originalY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const maxDistance = 100; // Максимальное расстояние воздействия
+                    
+                    if (distance < maxDistance) {
+                        const force = (maxDistance - distance) / maxDistance;
+                        const attraction = force * 0.3; // Сила притяжения
+                        
+                        dot.currentX = dot.originalX + dx * attraction;
+                        dot.currentY = dot.originalY + dy * attraction;
+                        
+                        dot.element.style.transform = `translate(${dx * attraction}px, ${dy * attraction}px)`;
+                        
+                        // Добавляем классы для визуальных эффектов
+                        if (distance < 50) {
+                            dot.element.classList.add('attracted');
+                            dot.element.classList.remove('near-cursor');
+                        } else if (distance < 80) {
+                            dot.element.classList.add('near-cursor');
+                            dot.element.classList.remove('attracted');
+                        } else {
+                            dot.element.classList.remove('attracted', 'near-cursor');
+                        }
+                    } else {
+                        // Возвращаем точку в исходное положение
+                        dot.element.style.transform = 'translate(0px, 0px)';
+                        dot.element.classList.remove('attracted', 'near-cursor');
+                        dot.currentX = dot.originalX;
+                        dot.currentY = dot.originalY;
+                    }
+                });
+            }
+
+            // Отслеживание движения мыши
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                requestAnimationFrame(updateDots);
+            });
+
+            // Анимация карточек проектов при прокрутке
             const cards = document.querySelectorAll('.project-card');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -372,18 +187,12 @@
                 observer.observe(card);
             });
 
-            // Add subtle interactive effects for black background
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = (e.clientX / window.innerWidth) * 100;
-                const mouseY = (e.clientY / window.innerHeight) * 100;
-                
-                // Subtle glow effect on mouse move
-                document.body.style.background = `
-                    radial-gradient(circle at ${mouseX}% ${mouseY}%, 
-                        rgba(255, 229, 0, 0.03) 0%, 
-                        transparent 40%), 
-                    #000000
-                `;
+            // Создаем начальную сетку точек
+            createDots();
+
+            // Пересоздаем сетку при изменении размера окна
+            window.addEventListener('resize', () => {
+                createDots();
             });
         });
     </script>

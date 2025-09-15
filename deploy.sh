@@ -4,6 +4,7 @@
 BUCKET_NAME="graebert-dev-projects"
 BUILD_FILE="index.html"
 FAVICON_FILE="favicon.svg"
+CSS_FILE="styles.css"
 
 echo "🚀 Начинаем деплой AWS Main Page..."
 
@@ -30,6 +31,11 @@ if [ ! -f "$FAVICON_FILE" ]; then
     exit 1
 fi
 
+if [ ! -f "$CSS_FILE" ]; then
+    echo "❌ Файл $CSS_FILE не найден"
+    exit 1
+fi
+
 echo "📄 Загружаем главную страницу..."
 aws s3 cp $BUILD_FILE s3://$BUCKET_NAME/ --cache-control "max-age=300"
 
@@ -43,6 +49,14 @@ aws s3 cp $FAVICON_FILE s3://$BUCKET_NAME/ --cache-control "max-age=31536000"
 
 if [ $? -ne 0 ]; then
     echo "❌ Ошибка при загрузке фавикона"
+    exit 1
+fi
+
+echo "🎨 Загружаем стили CSS..."
+aws s3 cp $CSS_FILE s3://$BUCKET_NAME/ --cache-control "max-age=31536000" --content-type "text/css"
+
+if [ $? -ne 0 ]; then
+    echo "❌ Ошибка при загрузке CSS файла"
     exit 1
 fi
 
